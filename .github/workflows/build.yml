@@ -13,9 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install dependencies
-      run: sudo apt-get install -y cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev
+      run: sudo apt-get update && sudo apt-get install -y cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev
     - name: create environment
-      run: mkdir build && cd build
+      run: ls -la && mkdir build && cd build
     - name: run CMAKE
       run: cmake ..
     - name: build

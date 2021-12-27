@@ -17,6 +17,6 @@ jobs:
     - name: create environment
       run: mkdir build
     - name: run CMAKE
-      run: cd build && cmake --DCMAKE_CXX_FLAGS="-O3" ..
+      run: cd build && cmake ..
     - name: build
       run: cd build && make -j && ls -la

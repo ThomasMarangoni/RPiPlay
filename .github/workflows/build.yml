@@ -15,7 +15,7 @@ jobs:
     - name: install dependencies
       run: sudo apt-get update && sudo apt-get install -y cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-libav gstreamer1.0-vaapi gstreamer1.0-plugins-bad
     - name: create environment
-      run: pmkdir build
+      run: mkdir build
     - name: run CMAKE
       run: cd build && cmake --DCMAKE_CXX_FLAGS="-O3" ..
     - name: build

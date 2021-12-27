@@ -20,3 +20,7 @@ jobs:
       run: cd build && cmake ..
     - name: build
       run: cd build && make -j && ls -la
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "build/rpiplay"
+        token: ${{ secrets.GITH

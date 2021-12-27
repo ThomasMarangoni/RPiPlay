@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install dependencies
+      run: apt-get install cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev
+    - name: create environment
+      run: mkdir build && cd build
+    - name: run CMAKE
+      run: cmake ..
+    - name: build
+      run: make -j

@@ -15,8 +15,8 @@ jobs:
     - name: install dependencies
       run: sudo apt-get update && sudo apt-get install -y cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev
     - name: create environment
-      run: pwd && ls -la && mkdir build && cd build
+      run: pwd && ls -la && mkdir build
     - name: run CMAKE
-      run: cmake ..
+      run: cd build && cmake ..
     - name: build
-      run: make -j
+      run: cd build && make -j
